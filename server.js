@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Kết nối đến MongoDB
-mongoose.connect(process.env.MONGO_URI, { useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Kết nối đến MongoDB thành công'))
   .catch(err => console.log(err));
 
