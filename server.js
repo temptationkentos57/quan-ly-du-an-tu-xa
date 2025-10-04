@@ -12,7 +12,7 @@ app.use(express.json());
 // Kết nối đến MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Kết nối đến MongoDB thành công'))
-  .catch(err => console.log(err));
+  .catch(err => console.error('Kết nối đến MongoDB thất bại:', err));
 
 app.listen(PORT, () => {
   console.log(`Server đang chạy trên cổng ${PORT}`);
